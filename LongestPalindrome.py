@@ -13,11 +13,20 @@ class Solution:
                 counter = counter + 1
                 check = True
         return counter
+    def longestPalindrome2(self, s: str) -> int:
+        letters = Counter(s)
+        check = 0
+        result = 0
+        for count in letters.values:
+            if count % 2 == 0:
+                result = result + count
+            else:
+                odd = 1
+                result = result + count - 1
+        return result + odd
+        
 p = Solution()
 print(p.longestPalindrome("abccccdd"))
 print(p.longestPalindrome("ccc"))
 print(p.longestPalindrome("aA"))
 print(p.longestPalindrome("bananas"))
-print(5 % 2)
-print(11 % 2)
-print(3 % 2)
