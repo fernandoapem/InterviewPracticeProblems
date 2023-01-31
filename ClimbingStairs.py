@@ -1,5 +1,8 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return 9
-p = Solution()
-print(p.climbStairs(2))
+        a = b = 1
+        for i in range(0,n-1):
+            temp = a
+            a = a + b
+            b = temp
+        return a
